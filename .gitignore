@@ -7,6 +7,8 @@
 *bin
 /
 
+**/gwt-unitCache/*
+**/war/WEB-INF/*
 *local.properties
 *.idea
 *.iml
