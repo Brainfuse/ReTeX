@@ -46,17 +46,50 @@ package com.himamis.retex.renderer.desktop.resources;
 import java.io.InputStream;
 
 import com.himamis.retex.renderer.desktop.FactoryProviderDesktop;
+import com.himamis.retex.renderer.desktop.TeXFormulaSettingsParserPlaceHolder;
+import com.himamis.retex.renderer.desktop.font.FontLoaderPlaceHolder;
+import com.himamis.retex.renderer.share.DefaultTeXFontParser;
+import com.himamis.retex.renderer.share.GlueSettingsParser;
+import com.himamis.retex.renderer.share.TeXFormulaSettingsParser;
+import com.himamis.retex.renderer.share.TeXSymbolParser;
 import com.himamis.retex.renderer.share.exception.ResourceParseException;
+import com.himamis.retex.renderer.share.platform.font.Font;
 import com.himamis.retex.renderer.share.platform.resources.ResourceLoader;
 
 public class ResourceLoaderD implements ResourceLoader {
-
+	private Class<?>[] settingsClass= new Class<?>[] {
+		TeXFormulaSettingsParser.class, 
+		DefaultTeXFontParser.class,
+		TeXSymbolParser.class,
+		GlueSettingsParser.class,
+		
+	};
 	public InputStream loadResource(Object base, String path) throws ResourceParseException {
 		if (base != null) {
-			return ((Class<?>) base).getResourceAsStream(path);
+			
+			Class<?> baseClass = (Class<?>) base;
+			if ( baseClass.isAssignableFrom(Font.class))
+				baseClass = FontLoaderPlaceHolder.class;
+			else if ( isAssignableFrom(baseClass, settingsClass))
+				baseClass = TeXFormulaSettingsParserPlaceHolder.class;
+			InputStream resourceAsStream = baseClass.getResourceAsStream(path);
+			return resourceAsStream;
 		} else {
 			return FactoryProviderDesktop.class.getResourceAsStream(path);
 		}
+	}
+	/**
+	 * We use the class comparison instead of a string to enable obfuscation of the 
+	 * code without affecting the functionality.
+	 * @param baseClass
+	 * @param settingsClass2 
+	 * @return
+	 */
+	private boolean isAssignableFrom(Class<?> baseClass, Class<?>[] settingsClass2) {
+		for ( Class<?> c: settingsClass2) {
+			if (baseClass.isAssignableFrom(c)) return true;
+		}
+		return false;
 	}
 
 }
