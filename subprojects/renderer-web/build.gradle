@@ -20,8 +20,8 @@ targetCompatibility = 1.6
 gwt {
 	gwtVersion '2.7.0'
 	// only compilable module
-	modules 'org.scilab.forge.JLaTeXMathGWTExportedLibrary'
-	devModules 'org.scilab.forge.JLaTeXMathGWTDev'
+	modules 'com.himamis.retex.renderer.JLaTeXMathGWTExportedLibrary'
+	devModules 'com.himamis.retex.renderer.JLaTeXMathGWTDev'
 	/*compiler {
         style = de.richsource.gradle.plugins.gwt.Style.DETAILED;
 	}*/

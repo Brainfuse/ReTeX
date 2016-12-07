@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <source path="jlatexmath" />
-  <super-source path="gwt-patch" />
+  <source path="web" />
+  <source path="share" />
+  <super-source path="web/gwt-patch" />
   <inherits name="com.google.gwt.core.Core" />
 </module>

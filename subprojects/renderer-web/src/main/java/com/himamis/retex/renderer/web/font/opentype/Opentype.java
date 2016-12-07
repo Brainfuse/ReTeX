@@ -54,7 +54,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.ScriptInjector;
 import com.himamis.retex.renderer.web.font.FontLoaderWrapper;
 import com.himamis.retex.renderer.web.font.FontW;
-import com.himamis.retex.renderer.web.resources.js.JsResources;
+import com.himamis.retex.renderer.web.jlatexmath.resources.js.JsResources;
 
 public class Opentype implements FontLoaderWrapper {
 

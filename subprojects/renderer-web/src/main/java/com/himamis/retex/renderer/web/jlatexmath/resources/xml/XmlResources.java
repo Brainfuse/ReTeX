@@ -41,7 +41,7 @@
  * version.
  * 
  */
-package com.himamis.retex.renderer.web.resources.xml;
+package com.himamis.retex.renderer.web.jlatexmath.resources.xml;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ClientBundle;

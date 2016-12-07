@@ -47,7 +47,7 @@ import com.himamis.retex.renderer.share.cyrillic.CyrillicRegistration;
 import com.himamis.retex.renderer.share.exception.ResourceParseException;
 import com.himamis.retex.renderer.share.greek.GreekRegistration;
 import com.himamis.retex.renderer.share.platform.resources.ResourceLoader;
-import com.himamis.retex.renderer.web.resources.xml.XmlResources;
+import com.himamis.retex.renderer.web.jlatexmath.resources.xml.XmlResources;
 
 public class ResourceLoaderW implements ResourceLoader {
 
