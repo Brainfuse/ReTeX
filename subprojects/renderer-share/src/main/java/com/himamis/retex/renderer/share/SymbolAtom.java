@@ -153,8 +153,25 @@ public class SymbolAtom extends CharSymbol {
 		Object obj = symbols.get(name);
 		if (obj == null) // not found
 			throw new SymbolNotFoundException(name);
-		else
-			return (SymbolAtom) obj;
+		else {
+			
+			SymbolAtom symAtom = (SymbolAtom) obj;
+			return symAtom;
+		}
+	}
+	/**
+	 * Looks up the name in the table and returns the corresponding SymbolAtom representing the
+	 * symbol (if it's found).
+	 *
+	 * @param name the name of the symbol
+	 * @return a SymbolAtom representing the found symbol
+	 * @throws SymbolNotFoundException if no symbol with the given name was found
+	 */
+	public static SymbolAtom getCopy(String name) throws SymbolNotFoundException {
+		Object obj = get(name);
+		SymbolAtom symAtom = (SymbolAtom) obj;
+		obj = new SymbolAtom(symAtom.name, symAtom.type, symAtom.delimiter);
+			return symAtom;
 	}
 
 	/**

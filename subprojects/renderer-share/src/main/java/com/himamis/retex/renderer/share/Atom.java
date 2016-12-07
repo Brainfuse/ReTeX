@@ -105,12 +105,12 @@ public abstract class Atom implements Cloneable {
 	public int getRightType() {
 		return type;
 	}
-
+/*
 	public Atom clone() {
 		try {
 			return (Atom) super.clone();
 		} catch (Exception e) {
 			return null;
 		}
-	}
+	}*/
 }
