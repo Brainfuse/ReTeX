@@ -12,7 +12,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.himamis.retex.renderer.desktop.FactoryProviderDesktop;
 import com.himamis.retex.renderer.desktop.graphics.ImageD;
 import com.himamis.retex.renderer.share.ColorUtil;
 import com.himamis.retex.renderer.share.TeXConstants;
@@ -81,7 +80,7 @@ public class BasicTest {
 		try {
 			formula = new TeXFormula(latex);
 		} catch (Throwable e) {
-			e.printStackTrace();
+			throw new RuntimeException(e);
 		}
 		TeXIcon icon = formula.new TeXIconBuilder().setStyle(TeXConstants.STYLE_DISPLAY).setSize(20).build();
 

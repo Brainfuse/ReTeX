@@ -10,6 +10,7 @@ buildscript {
     }
 }
 
+
 subprojects {
 	repositories {
 	    mavenCentral()
@@ -20,7 +21,6 @@ subprojects {
 	//apply plugin: 'license'
 
 	tasks.eclipse.dependsOn 'cleanEclipse'
-
 	//license {
 	//	header rootProject.file('HEADER')
 	//	skipExistingHeaders true
