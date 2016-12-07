@@ -20,13 +20,13 @@
           
           var opts = {
             context : canvas.getContext('2d'),
-            latex : "\\sqrt{"+id+"}",
-            size : 14,
+            latex : "\\sqrt{"+id+"} ",
+            size : 30,
             x : 0,
             y : 0,
             type : 0,
             foregroundColor : '#000000',
-            backgroundColor : '#FF0000',
+            backgroundColor : '#FFFFFF',
             callback : function() { console.log('callback') },
             insets : {
               top : 0,
@@ -43,8 +43,8 @@
       		//canvas.style.width=ret.width+"px";
       		//canvas.style.height=ret.height+"px";
 			//canvas.style.width= "100px"
-			canvas.style.height= "100px"
-          canvas.style.width= "100px"
+			canvas.style.height= "200px"
+          canvas.style.width= "200px"
           console.log(ret);
         }
         
@@ -61,7 +61,7 @@
 
  
   <!-- Maybe a callback from the library would be good to signal the availability of the library -->
-  <body onload="setTimeout(drawAll, 2500)">
+  <body onload="setTimeout(drawAll, 100)">
     <h1>JLaTeXMath test</h1>
     <!-- Important to set no just the height/width in style, but the height/width property of canvas also. -->
     <canvas id="latex1" style="height: 500px; width: 500px" width="500px" height="500px"></canvas>
