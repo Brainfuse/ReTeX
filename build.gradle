@@ -9,15 +9,21 @@ buildscript {
         classpath 'nl.javadude.gradle.plugins:license-gradle-plugin:0.11.0'
     }
 }
-
+project.group='com.himamis.retex'
+project.version="1.0.1-SNAPSHOT"
 
 subprojects {
 	repositories {
 	    mavenCentral()
 	}
+	project.version = rootProject.version
+	project.group = rootProject.group
 	
 	apply plugin: 'eclipse'
 	apply plugin: 'idea'
+	apply plugin: 'maven'
+	
+	
 	//apply plugin: 'license'
 
 	tasks.eclipse.dependsOn 'cleanEclipse'
@@ -37,7 +43,7 @@ subprojects {
 
     
 task wrapper(type: Wrapper) {
-	gradleVersion = '2.5'
+	gradleVersion = '3.2.1'
 }
 
 apply from: 'ext.gradle'

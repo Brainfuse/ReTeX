@@ -1,16 +1,15 @@
 apply plugin: 'java'
-apply plugin: 'maven-publish'
+//apply plugin: 'maven-publish'
 
-group 'com.himamis.retex'
-version '0.1'
 
-publishing {
+/*publishing {
     publications {
         library(MavenPublication) {
             from components.java
         }
     }
 }
+*/
 sourceCompatibility = 1.5
 targetCompatibility = 1.5
 

@@ -1,11 +1,12 @@
 buildscript {
     repositories {
+        jcenter()
         mavenCentral()
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:$rootProject.androidPluginVersion"
-        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+        /*classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'*/
     }
 }
 
@@ -13,12 +14,10 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'android-sdk-manager'
+//apply plugin: 'android-sdk-manager'
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-group 'com.himamis.retex'
-version '0.1'
 
 publishing {
     publications {
